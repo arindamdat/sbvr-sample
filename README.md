@@ -20,4 +20,4 @@ Once you are done with the above steps, it will run following two docker contain
   I prefer "DBeaver".
 - A container hosting the api at port 1337
 
-Now you can access the api at http://localhost:1337/eproc. This is a ODATA supported Rest api. You can get the entire model information at this url http://localhost:1337/eproc/$metadata
+Now you can access the api at http://localhost:1337/eproc. This is a ODATA supported Rest api. You can get the entire model information at this url http://localhost:1337/eproc/$metadata. If you want a more readable and clean JSON format of edmx, you can hit this custom url http://localhost:1337/edm-meta?apiRoot=eproc. NOTE: here the querystring apiRoot should contain the Root of the api, for example eproc, employee-mgmt, etendering etc. This server can host multiple apis (or domain). For now, we have only e-procurement which has apiRoot /eproc.
