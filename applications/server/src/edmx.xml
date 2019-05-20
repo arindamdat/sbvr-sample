@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<edmx:Edmx Version="1.0" 
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema Namespace="eproc" 
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
+            xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+
+
+            <EntityType Name="category">
+                <Key>
+                    <PropertyRef Name="id" />
+                </Key>
+
+                <Property Name="created_at" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="id" Type="Edm.Int64" Nullable="false" />
+                <Property Name="name" Type="Edm.String" Nullable="false" />
+
+
+            </EntityType>
+
+
+            <EntityType Name="device">
+                <Key>
+                    <PropertyRef Name="id" />
+                </Key>
+
+                <Property Name="created_at" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="id" Type="Edm.Int64" Nullable="false" />
+                <Property Name="name" Type="Edm.String" Nullable="true" />
+                <Property Name="note" Type="Edm.String" Nullable="true" />
+                <Property Name="type" Type="Edm.String" Nullable="false" />
+
+
+            </EntityType>
+
+
+            <EntityType Name="device__has__category">
+                <Key>
+                    <PropertyRef Name="id" />
+                </Key>
+
+                <Property Name="created_at" Type="Edm.DateTime" Nullable="false" />
+                <Property Name="id" Type="Edm.Int64" Nullable="false" />
+                <NavigationProperty Name="device" Relationship="eproc.device__has__categorydevice" FromRole="device__has__category" ToRole="device" />
+                <NavigationProperty Name="category" Relationship="eproc.device__has__categorycategory" FromRole="device__has__category" ToRole="category" />
+
+            </EntityType>
+            <Association Name="device__has__categorydevice">
+                <End Role="device__has__category" Type="eproc.device__has__category" Multiplicity="1" />
+                <End Role="device" Type="eproc.device" Multiplicity="*" />
+            </Association>
+            <Association Name="device__has__categorycategory">
+                <End Role="device__has__category" Type="eproc.device__has__category" Multiplicity="1" />
+                <End Role="category" Type="eproc.category" Multiplicity="*" />
+            </Association>
+            <EntityContainer Name="eprocService" m:IsDefaultEntityContainer="true">
+
+                <EntitySet Name="category" EntityType="eproc.category" />
+                <EntitySet Name="device" EntityType="eproc.device" />
+                <EntitySet Name="device__has__category" EntityType="eproc.device__has__category" />
+                <AssociationSet Name="device__has__categorydevice" Association="eproc.device__has__categorydevice">
+                    <End Role="device__has__category" EntitySet="eproc.device__has__category" />
+                    <End Role="device" EntitySet="eproc.device" />
+                </AssociationSet>
+                <AssociationSet Name="device__has__categorycategory" Association="eproc.device__has__categorycategory">
+                    <End Role="device__has__category" EntitySet="eproc.device__has__category" />
+                    <End Role="category" EntitySet="eproc.category" />
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

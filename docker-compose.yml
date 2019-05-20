@@ -10,6 +10,7 @@ services:
     - .:/application/:rw
    ports: 
     - "1337:1337"
+    - "9226:9226"
    depends_on: 
     - postgres
   postgres:
