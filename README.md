@@ -3,7 +3,7 @@ This is a sample project to try-out pine js with SBVR
 
 ## Prerequisites
 - Node JS
-- NPM
+- YARN [***IMPORTANT: Please install yarn from this .msi installer only https://yarnpkg.com/en/docs/install#windows-stable]
 - Docker Desktop and make sure it is running.
 
 ## Steps to run the project:
@@ -11,7 +11,7 @@ This is a sample project to try-out pine js with SBVR
 2. Open a terminal of your choice
 3. Change working directory to the root of the repository [e.g, cd /d/my-project/sbvr-sample]
 4. Run the following commands in sequence<br/>
-     `npm install`<br/>
+     `yarn`<br/>
      `docker-compose up`
 5. Close the terminal
      

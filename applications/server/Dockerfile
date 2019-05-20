@@ -1,5 +1,5 @@
 FROM node:8.11.2-slim
-WORKDIR /api
+WORKDIR /application
 
 ENV HOST=0.0.0.0
 

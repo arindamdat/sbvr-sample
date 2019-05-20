@@ -1,11 +1,13 @@
 version: "3"
 services: 
-  api:
-   build: .
-   command: "npm run start"
+  server:
+   build: 
+     context: .
+     dockerfile: ./applications/server/Dockerfile
+   command: "yarn run server:start"
    restart: always
    volumes: 
-    - .:/api/:rw
+    - .:/application/:rw
    ports: 
     - "1337:1337"
    depends_on: 
