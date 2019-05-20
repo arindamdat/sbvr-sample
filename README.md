@@ -17,6 +17,7 @@ This is a sample project to try-out pine js with SBVR
      
 Once you are done with the above steps, it will run following two docker containers:
 - Postgres: localhost:5432. Username: SYSDBA, Password: masterkey. You can use any client tool to connect to this Postgres server.
+  I prefer "DBeaver".
 - A container hosting the api at port 1337
 
 Now you can access the api at http://localhost:1337/eproc. This is a ODATA supported Rest api. You can get the entire model information at this url http://localhost:1337/eproc/$metadata
