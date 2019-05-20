@@ -1,0 +1,6 @@
+FROM node:8.11.2-slim
+WORKDIR /api
+
+ENV HOST=0.0.0.0
+
+EXPOSE 1337

@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "modelName": "Example",
+      "modelFile": "example.sbvr",
+      "apiRoot": "eproc"
+    }
+  ],
+  "users": [
+    {
+      "username": "guest",
+      "password": " ",
+      "permissions": ["resource.all"]
+    }
+  ]
+}

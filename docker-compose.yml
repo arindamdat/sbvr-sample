@@ -1,0 +1,23 @@
+version: "3"
+services: 
+  api:
+   build: .
+   command: "npm run start"
+   restart: always
+   volumes: 
+    - .:/api/:rw
+   ports: 
+    - "1337:1337"
+   depends_on: 
+    - postgres
+  postgres:
+    image: postgres:latest
+    restart: always
+    ports: 
+      - "5432:5432"
+    environment: 
+      - POSTGRES_USER=SYSDBA
+      - POSTGRES_PASSWORD=masterkey
+      - POSTGRES_DB=eprocurement
+volumes: 
+  static: {}
