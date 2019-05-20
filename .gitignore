@@ -45,3 +45,4 @@ typings/
 .env
  # firebase data files
 dev_data_files/ 
+.pinejs-cache.json
